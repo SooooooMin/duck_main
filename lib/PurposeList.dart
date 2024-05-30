@@ -70,7 +70,7 @@ class ppListScreenState extends State<ppListScreen> {
 
                     if (updatedPurpose != null) {
                       setState(() {
-                        pps[index] = updatedPurpose();
+                        pps[index] = updatedPurpose;
                       });
                     }
                     // 메모 수정 로직
@@ -84,7 +84,7 @@ class ppListScreenState extends State<ppListScreen> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () async {
           final result = await Navigator.push(
             context,
@@ -98,6 +98,9 @@ class ppListScreenState extends State<ppListScreen> {
 ;            });
           }
         },
+
+        backgroundColor: Color(0xFFFFC076),
+
         child: const Icon(Icons.add),
       ),
     );
